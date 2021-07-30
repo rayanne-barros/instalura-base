@@ -2,8 +2,7 @@ import { breakpoints } from "../breakpoints"
 import { css } from "styled-components"
 
 export function breakpointsMedia(cssByBreakpoints){
-    const breakpointNames = Object.keys(cssByBreakpoints)
-    console.log(breakpointNames)
+    const breakpointNames = Object.keys(cssByBreakpoints)   
     return breakpointNames.map((breakpointName)=> {
         return css`
             @media screen and (min-width: ${breakpoints[breakpointName]}px) {
