@@ -1,6 +1,7 @@
-import { createGlobalStyle } from 'styled-components'
-import { normalize } from 'styled-normalize'
+import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
 
+// eslint-disable-next-line import/prefer-default-export
 export const GlobalStyle = createGlobalStyle`
   * {
       box-sizing: border-box;
@@ -8,10 +9,12 @@ export const GlobalStyle = createGlobalStyle`
 
    ${normalize}
   
-  body {
+  html, body {
     margin: 0;
     padding: 0;
-    font-family: ${({ theme }) => theme.fontFamily};      
+    font-family: ${({ theme }) => theme.fontFamily};
+    background-color: ${({ theme }) => theme.colorTheme.background.color};
+    color: ${({ theme }) => theme.colorTheme.background.contrastText};     
   }
 
   /* Full height layout */
@@ -20,9 +23,10 @@ export const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         width: 100%;
     }
+    
     #__next {
         flex: 1;
         display: flex;
         flex-direction: column;
     }
-`
+`;

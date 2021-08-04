@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 import { TextStyleVariantsMap } from '../../../foundation/Text';
 
+// eslint-disable-next-line import/prefer-default-export
 export const MenuWrapper = styled.nav`
   font-family: 'Rubik', sans-serif;
   display: flex;
