@@ -6,10 +6,13 @@ import Text from '../src/components/foundation/Text';
 import { Button } from '../src/components/commons/Button';
 import { Grid } from '../src/components/foundation/layout/Grid';
 import { Box } from '../src/components/foundation/layout/Box';
+import Modal from '../src/components/commons/Modal';
 
 // eslint-disable-next-line react/prop-types
 export default function Home({ toggleTheme }) {
   const { colorTheme } = useContext(ThemeContext);
+  const [isModalOpen, setModalState] = React.useState(false);
+
   return (
     <Box
       flex="1"
@@ -25,6 +28,33 @@ export default function Home({ toggleTheme }) {
       backgroundRepeat="no-repeat"
       backgroundPosition="bottom right"
     >
+      {/*
+        [Solid]
+        S = Single Responsability
+        O = Open Closed
+        L = Liskov Substitution
+        I = Interface Segregation
+        D = Dependency Inversion
+       */}
+      {/* {isModalOpen && <Modal isOpen={isModalOpen} />} */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setModalState(false);
+        }}
+      >
+        {(propsDoModal) => (
+          <Box
+            backgroundColor="gray"
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...propsDoModal}
+          >
+            <div>
+              Nosso conteúdo pro modal
+            </div>
+          </Box>
+        )}
+      </Modal>
       <Menu toggleTheme={toggleTheme} />
 
       <Grid.Container
@@ -73,6 +103,10 @@ export default function Home({ toggleTheme }) {
                 md: 'initial',
               }}
               display="block"
+              onClick={() => {
+                // isModalOpen = false;
+                setModalState(!isModalOpen);
+              }}
             >
               Cadastrar
             </Button>
