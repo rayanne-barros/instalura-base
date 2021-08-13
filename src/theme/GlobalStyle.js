@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
-    font-family: ${({ theme }) => theme.fontFamily};
+    font-family: ${({ theme }) => theme.theme.fontFamily};
     background-color: ${({ theme }) => theme.colorTheme.background.color};
     color: ${({ theme }) => theme.colorTheme.background.contrastText};     
   }

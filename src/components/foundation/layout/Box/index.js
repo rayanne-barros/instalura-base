@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { get } from 'lodash';
 import { propToStyle } from '../../../../theme/utils/propToStyle';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -12,4 +13,8 @@ export const Box = styled.div`
     ${propToStyle('backgroundImage')}
     ${propToStyle('backgroundRepeat')}
     ${propToStyle('backgroundPosition')}
+    ${propToStyle('boxShadow')}
+    ${propToStyle('padding')}
+
+    background-color: ${({ theme, variant }) => get(theme, `colorTheme.${variant}.color`)};
 `;
