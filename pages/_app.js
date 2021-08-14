@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
 
-        <link rel="icon" href="/images/instalura_icon.ico" />
+        <link rel="icon" href="/Images/instalura_icon.ico" />
         <title>Instalura</title>
       </Head>
 
