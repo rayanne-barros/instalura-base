@@ -1,5 +1,6 @@
 import React from 'react';
 import { Lottie } from '@crello/react-lottie';
+import loadingAnimation from './animations/loading.json';
 import successAnimation from './animations/success.json';
 import errorAnimation from './animations/error.json';
 import { Button } from '../../commons/Button';
@@ -37,6 +38,7 @@ function FormContent() {
       onSubmit={(event) => {
         event.preventDefault();
         setIsFormSubmited(true);
+        setSubmissionStatus(formStates.LOADING);
         // eslint-disable-next-line no-console
         console.log('O formulário esta pronto, faça seu cadastro como usuário');
         const userDTO = { username: userInfo.usuario, name: userInfo.nome };
@@ -104,6 +106,19 @@ function FormContent() {
       >
         Cadastrar
       </Button>
+      { isFormSubmited && submissionStatus === formStates.LOADING && (
+        <Box
+          display="flex"
+          justifyContent="center"
+        >
+          <Lottie
+            width="150px"
+            height="150px"
+            className="lottie-container basic"
+            config={{ animationData: loadingAnimation, loop: false, autoplay: true }}
+          />
+        </Box>
+      )}
       {isFormSubmited && submissionStatus === formStates.DONE && (
         <Box
           display="flex"
