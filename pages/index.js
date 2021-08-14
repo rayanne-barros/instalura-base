@@ -23,8 +23,8 @@ export default function Home({ toggleTheme }) {
       justifyContent="space-between"
       backgroundImage={
         colorTheme.title === 'light'
-          ? 'url(/images/bubbles.svg)'
-          : 'url(/images/bubbles_dark.svg)'
+          ? 'url(/Images/bubbles.svg)'
+          : 'url(/Images/bubbles_dark.svg)'
       }
       backgroundRepeat="no-repeat"
       backgroundPosition="bottom right"
