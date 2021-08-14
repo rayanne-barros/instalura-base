@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { get } from 'lodash';
+import styled from 'styled-components';
 import { propToStyle } from '../../../../theme/utils/propToStyle';
 
 // eslint-disable-next-line import/prefer-default-export
