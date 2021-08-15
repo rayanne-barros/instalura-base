@@ -5,7 +5,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ignore-path .gitignore .",
-    "lint:fix": "eslint --fix --ignore-path .gitignore .",
     "commit": "cz"
   },
   "dependencies": {
