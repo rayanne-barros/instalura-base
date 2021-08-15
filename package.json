@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ignore-path .gitignore .",
-    "custom-script": "node ./script-test.js",
+    "lint:fix": "eslint --fix --ignore-path .gitignore .",
     "commit": "cz"
   },
   "dependencies": {
