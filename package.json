@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ignore-path .gitignore .",
-    "custom-script": "node ./script-test.js"
+    "custom-script": "node ./script-test.js",
+    "commit": "cz"
   },
   "dependencies": {
     "@crello/react-lottie": "0.0.11",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "^11.0.1",
@@ -33,9 +35,14 @@
     "husky": "^7.0.1"
   },
   "husky": {
-        "hooks": { 
-          "pre-push": "npm run lint"
-        }
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
   },
-  "license": "MIT"
+  "license": "MIT",  
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
