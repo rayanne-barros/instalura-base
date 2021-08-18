@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ignore-path .gitignore .",
-    "commit": "cz"
+    "commit": "cz",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@crello/react-lottie": "0.0.11",
@@ -33,14 +34,9 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^7.0.1"
+    "husky": "^7.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run lint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
+  
   "license": "MIT",
   "config": {
     "commitizen": {
