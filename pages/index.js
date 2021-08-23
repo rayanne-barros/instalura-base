@@ -45,7 +45,7 @@ export default function Home({ toggleTheme }) {
         }}
       >
         {(propsDoModal) => (
-          <FormCadastro propsDoModal={propsDoModal} />
+          <FormCadastro propsDoModal={propsDoModal} setModalState={setModalState} />
         )}
       </Modal>
       <Menu toggleTheme={toggleTheme} />
