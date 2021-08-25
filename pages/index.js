@@ -48,7 +48,10 @@ export default function Home({ toggleTheme }) {
           <FormCadastro propsDoModal={propsDoModal} setModalState={setModalState} />
         )}
       </Modal>
-      <Menu toggleTheme={toggleTheme} />
+      <Menu
+        toggleTheme={toggleTheme}
+        onCadastrarClick={() => setModalState(true)}
+      />
 
       <Grid.Container
         marginTop={{
