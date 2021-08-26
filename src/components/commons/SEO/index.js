@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 
 // eslint-disable-next-line react/prop-types
 export function SEO({ headTitle }) {
+  const pageTitleDefault = 'Instalura';
   const hasTitle = Boolean(headTitle);
-  const baseTitle = 'Instalura';
-  const title = hasTitle ? (`${headTitle} | ${baseTitle}`) : baseTitle;
-  const description = 'Aprenda Programação, Front-end, Data Science, UX, DevOps, Marketing, Inovação e Gestão na maior plataforma de tecnologia do Brasil';
+  const title = hasTitle ? (`${headTitle} | ${pageTitleDefault}`) : pageTitleDefault;
+  const description = 'Projeto criado  durante o Bootcamp de Front-end Avançado utilizando Next.js, React e styled-components.';
   const image = 'https://www.alura.com.br/assets/img/alura-share.1617727198.png';
-  const urlBase = 'urldomeuprojeto.com.br';
+  const urlBase = 'https://instalura-base-rayanne-barros.vercel.app/';
   return (
     <Head>
       <title>{title}</title>
