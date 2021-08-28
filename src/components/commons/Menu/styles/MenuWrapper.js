@@ -10,8 +10,7 @@ export const MenuWrapper = styled.nav`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 18px;
-  padding-left: 28px;
-  padding-right: 28px;
+  padding: 0 28px;
   ${breakpointsMedia({
     md: css`
       justify-content: flex-start;
@@ -92,7 +91,7 @@ MenuWrapper.CentralSide = styled.div`
     &:hover,
     &:focus {
       font-weight: 500;
-      color: ${({ theme }) => theme.colorTheme.background.contrastText};
+      color: #070C0E;
       
     }
   }

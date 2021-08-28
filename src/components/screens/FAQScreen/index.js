@@ -3,41 +3,26 @@ import PropTypes from 'prop-types';
 import Text from '../../foundation/Text';
 import { Box } from '../../foundation/layout/Box';
 import { Grid } from '../../foundation/layout/Grid';
-import Menu from '../../commons/Menu';
-import Footer from '../../commons/Footer';
-import Modal from '../../commons/Modal';
-import FormCadastro from '../../patterns/FormCadastro';
 
 // eslint-disable-next-line react/prop-types
-export default function FAQScreen({ toggleTheme, faqCategories }) {
-  const [isModalOpen, setModalState] = React.useState(false);
-
+export default function FAQScreen({ faqCategories }) {
   return (
     <Box
       display="flex"
       flexDirection="column"
       flex="1"
     >
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => {
-          setModalState(false);
-        }}
+      <Grid.Container
+        style={{ flex: 1 }}
       >
-        {(propsDoModal) => (
-          <FormCadastro propsDoModal={propsDoModal} />
-        )}
-      </Modal>
-
-      <Menu
-        toggleTheme={toggleTheme}
-        onCadastrarClick={() => setModalState(true)}
-      />
-
-      <Grid.Container style={{ flex: 1 }}>
         <Grid.Row
           marginTop={{ xs: '32px', md: '100px' }}
-          marginBottom={{ xs: '32px', md: '100px' }}
+          marginBottom={
+            {
+              xs: '32px',
+              // md: '100px'
+            }
+          }
           justifyContent="center"
         >
           <Grid.Col
@@ -102,8 +87,6 @@ export default function FAQScreen({ toggleTheme, faqCategories }) {
           }
         </Grid.Row>
       </Grid.Container>
-
-      <Footer />
     </Box>
   );
 }

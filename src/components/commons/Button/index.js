@@ -9,13 +9,13 @@ import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 import { propToStyle } from '../../../theme/utils/propToStyle';
 
 const ButtonGhost = css`
-  color: ${({ theme, variant }) => get(theme, `colorTheme.${variant}.color`)};
+  color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
   background: transparent;
 `;
 
 const ButtonDefault = css`
-  background-color: ${({ theme, variant }) => get(theme, `colorTheme.${variant}.color`)};
-  color: ${({ theme, variant }) => get(theme, `colorTheme.${variant}.contrastText`)};
+  background-color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
+  color: ${({ theme, variant }) => get(theme, `colors.${variant}.contrastText`)};
 `;
 
 // eslint-disable-next-line import/prefer-default-export
