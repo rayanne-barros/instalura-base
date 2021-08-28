@@ -1,4 +1,3 @@
-import { get } from 'lodash';
 import styled from 'styled-components';
 import { propToStyle } from '../../../../theme/utils/propToStyle';
 
@@ -16,7 +15,6 @@ export const Box = styled.div`
     ${propToStyle('boxShadow')}
     ${propToStyle('padding')}
 
-    background-color: ${({ theme, variant }) => get(theme, `colorTheme.${variant}.color`)};
     ${propToStyle('width')}
     ${propToStyle('listStyle')}
     ${propToStyle('margin')}

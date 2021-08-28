@@ -1,9 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContext } from 'styled-components';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
-import { LogoDark, LogoLight } from '../../../theme/Logo';
+import LogoLight from '../../../theme/Logo';
 import Text from '../../foundation/Text';
 import { Button } from '../Button';
 import { MenuWrapper } from './styles/MenuWrapper';
@@ -24,12 +21,11 @@ const links = [
 ];
 
 // eslint-disable-next-line react/prop-types
-export default function Menu({ toggleTheme, onCadastrarClick }) {
-  const { colorTheme } = useContext(ThemeContext);
+export default function Menu({ onCadastrarClick }) {
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
-        {colorTheme.title === 'light' ? <LogoLight /> : <LogoDark />}
+        <LogoLight />
       </MenuWrapper.LeftSide>
       <MenuWrapper.CentralSide>
         {links.map((link) => (
@@ -41,18 +37,10 @@ export default function Menu({ toggleTheme, onCadastrarClick }) {
         ))}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <Button
-          ghost
-          variant="primary"
-          onClick={toggleTheme}
-        >
-          {colorTheme.title === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-        </Button>
-
-        <Button ghost variant="secondary" href="/app/login">
+        <Button ghost variant="secondary.main" href="/app/login">
           Entrar
         </Button>
-        <Button variant="primary" onClick={onCadastrarClick}>
+        <Button variant="primary.main" onClick={onCadastrarClick}>
           Cadastrar
         </Button>
       </MenuWrapper.RightSide>

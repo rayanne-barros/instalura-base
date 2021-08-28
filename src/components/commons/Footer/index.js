@@ -7,14 +7,14 @@ const FooterWrapper = styled.footer`
   align-items: center;
   justify-content: center;
   border-radius: 4px; 
-  padding-right: 28px;
-  padding-left: 28px;
+  padding: 0 28px;
   img {
     width: 58px;
     margin-right: 23px;
   }
   a {
-    color: ${({ theme }) => theme.colorTheme.primary.color};
+    color: ${({ theme }) => theme.colors.primary.main.color};
+    cursor: pointer;
     text-decoration: none;
     transition: .3s;
     &:hover,
@@ -32,11 +32,17 @@ export default function Footer(props) {
         <img src="https://www.alura.com.br/assets/img/alura-logo.svg" alt="Logo Alura" />
       </a>
       <p>
-        Orgulhosamente criado durante
+        Orgulhosamente criado por
         {' '}
-        o
         {' '}
-        <a href="https://www.alura.com.br/">
+        <a href="https://github.com/rayanne-barros" target="_blank" rel="noopener noreferrer">
+          <span>Rayanne Barros</span>
+        </a>
+        {' '}
+        {' '}
+        durante o
+        {' '}
+        <a href="https://www.alura.com.br/" target="_blank" rel="noopener noreferrer">
           <span>Bootcamp Alura JAM Stack</span>
         </a>
       </p>

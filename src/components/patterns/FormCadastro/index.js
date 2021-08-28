@@ -73,7 +73,7 @@ function FormContent({ setModalState }) {
           xs: 'auto',
           md: 'initial',
         }}
-        variant="primary"
+        variant="primary.main"
         display="block"
         onClick={() => { setModalState(false); }}
         style={{
@@ -87,14 +87,14 @@ function FormContent({ setModalState }) {
       <Text
         variant="title"
         tag="h1"
-        color="tertiary.mainColor"
+        color="tertiary.main"
       >
         Pronto para saber da vida dos outros?
       </Text>
       <Text
         variant="paragraph1"
         tag="p"
-        color="tertiary.Color"
+        color="tertiary.light"
         marginBottom="32px"
       >
         Você está a um passo de saber tudo o que está
@@ -117,7 +117,7 @@ function FormContent({ setModalState }) {
         />
       </div>
       <Button
-        variant="primary"
+        variant="primary.main"
         type="submit"
         disabled={isFormInvalid}
         fullWidth
@@ -192,7 +192,7 @@ export default function FormCadastro({ propsDoModal, setModalState }) {
             xs: '16px',
             md: '85px',
           }}
-          variant="borders"
+          backgroundColor="white"
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...propsDoModal}
         >
