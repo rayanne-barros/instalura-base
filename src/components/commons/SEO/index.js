@@ -8,7 +8,8 @@ export function SEO({ headTitle }) {
   const hasTitle = Boolean(headTitle);
   const title = hasTitle ? (`${headTitle} | ${pageTitleDefault}`) : pageTitleDefault;
   const description = 'Projeto criado  durante o Bootcamp de Front-end Avançado utilizando Next.js, React e styled-components.';
-  const image = 'https://www.alura.com.br/assets/img/alura-share.1617727198.png';
+  const image = 'https://imgbox.com/DIXGBr9J';
+  // 'https://www.alura.com.br/assets/img/alura-share.1617727198.png';
   const urlBase = 'https://instalura-base-rayanne-barros.vercel.app/';
   return (
     <Head>
