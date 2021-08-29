@@ -82,27 +82,9 @@ export default websitePageHOC(HomeScreen, {
       headTitle: 'Home',
     },
     pageBoxProps: {
-      backgroundImage: 'url(/images/bubbles.svg)',
+      backgroundImage: 'url(/Images/bubbles.svg)',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'bottom right',
     },
   },
 });
-
-// // eslint-disable-next-line react/prop-types
-// export default function Home() {
-//   return (
-//     <WebsitePageWrapper
-//       seoProps={{
-//         headTitle: 'Home',
-//       }}
-//       pageBoxProps={{
-//         backgroundImage: 'url(/images/bubbles.svg)',
-//         backgroundRepeat: 'no-repeat',
-//         backgroundPosition: 'bottom right',
-//       }}
-//     >
-//       <HomeScreen />
-//     </WebsitePageWrapper>
-//   );
-// }
