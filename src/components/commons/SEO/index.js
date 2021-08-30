@@ -16,6 +16,9 @@ export function SEO({ headTitle }) {
       {/* <!-- Primary Meta Tags --> */}
       <meta name="title" content={title} />
       <meta name="description" content={description} />
+      <meta httpEquiv="content-language" content="pt-BR" />
+      <meta name="keywords" content="Next.js, React, Jamstack" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       {/* <!-- Open Graph / Facebook --> */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={urlBase} />

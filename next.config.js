@@ -1,6 +1,10 @@
 const redirects = require('./config/redirects');
 
 module.exports = {
+  i18n: {
+    locales: ['pt-BR'],
+    defaultLocale: 'pt-BR',
+  },
   trailingSlash: true,
   async redirects() {
     return redirects;
