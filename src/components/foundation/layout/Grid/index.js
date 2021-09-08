@@ -8,12 +8,9 @@ const Container = styled.div`
     padding-left: 28px;
     margin-right: auto;
     margin-left: auto;
+    max-width: initial;
+
     ${breakpointsMedia({
-    xs: css`
-      max-width: initial; 
-      padding-right: 28px;
-      padding-left: 28px;
-    `,
     sm: css`
       max-width: 576px; 
     `,
@@ -31,6 +28,10 @@ const Container = styled.div`
   })}
 
     ${propToStyle('marginTop')}
+    ${propToStyle('display')}
+    ${propToStyle('flex')}
+    ${propToStyle('alignItems')}
+    
   `;
 // eslint-disable-next-line import/prefer-default-export
 export const Grid = {
