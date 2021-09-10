@@ -2,6 +2,17 @@ import React from 'react';
 
 export function useForm({ initialValues, onSubmit }) {
   const [values, setValues] = React.useState(initialValues);
+
+  const [isFormDisabled, setIsFormDisabled] = React.useState(true);
+
+  React.useEffect(() => {
+    if (values.usuario.length > 0) {
+      setIsFormDisabled(false);
+    } else {
+      setIsFormDisabled(true);
+    }
+  }, [values]);
+
   return {
     values,
     handleSubmit(event) {
@@ -17,5 +28,7 @@ export function useForm({ initialValues, onSubmit }) {
         [fieldName]: value,
       }));
     },
+    // Validação do Form
+    isFormDisabled,
   };
 }
