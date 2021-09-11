@@ -17,20 +17,6 @@ const loginSchena = yup.object().shape({
     .min(8, 'Sua senha precisa ter ao menos 8 caracteres'),
 });
 
-// console.log(
-//   'loginSchena',
-//   loginSchena.validate(
-//     { usuario: '', senha: '' },
-//     { abortEarly: false },
-//   )
-//     .then((result) => {
-//       console.log(result);
-//     })
-//     .catch((err) => {
-//       console.error(err.inner);
-//     }),
-// );
-
 export default function LoginForm() {
   const router = useRouter();
   const initialValues = {
@@ -61,6 +47,7 @@ export default function LoginForm() {
         placeholder="Usuário"
         name="usuario"
         value={form.values.usuario}
+        error={form.erros.usuario}
         onChange={form.handleChange}
       />
       <TextField
@@ -68,6 +55,7 @@ export default function LoginForm() {
         name="senha"
         type="password"
         value={form.values.senha}
+        error={form.erros.senha}
         onChange={form.handleChange}
       />
       <Button
