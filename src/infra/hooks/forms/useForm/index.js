@@ -9,6 +9,7 @@ export function useForm({
 
   const [isFormDisabled, setIsFormDisabled] = React.useState(true);
   const [erros, setErros] = React.useState({});
+  const [touched, setTouchedFields] = React.useState({});
 
   React.useEffect(() => {
     validateSchema(values)
@@ -48,5 +49,14 @@ export function useForm({
     // Validação do Form
     isFormDisabled,
     erros,
+    touched,
+    handleBlur(event) {
+      const fieldName = event.target.getAttribute('name');
+
+      setTouchedFields({
+        ...touched,
+        [fieldName]: true, // usuário: true, senha: true
+      });
+    },
   };
 }

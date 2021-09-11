@@ -48,7 +48,9 @@ export default function LoginForm() {
         name="usuario"
         value={form.values.usuario}
         error={form.erros.usuario}
+        isTouched={form.touched.usuario}
         onChange={form.handleChange}
+        onBlur={form.handleBlur}
       />
       <TextField
         placeholder="Senha"
@@ -56,7 +58,9 @@ export default function LoginForm() {
         type="password"
         value={form.values.senha}
         error={form.erros.senha}
+        isTouched={form.touched.senha}
         onChange={form.handleChange}
+        onBlur={form.handleBlur}
       />
       <Button
         type="submit"
@@ -71,7 +75,7 @@ export default function LoginForm() {
         Entrar
       </Button>
       <pre>
-        {JSON.stringify(form.erros, null, 4)}
+        {JSON.stringify(form.touched, null, 4)}
       </pre>
     </form>
   );
