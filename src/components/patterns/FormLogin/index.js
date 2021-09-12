@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import * as yup from 'yup';
+import PropTypes from 'prop-types';
 import { Button } from '../../commons/Button';
 import TextField from '../../Forms/TextField';
 import { useForm } from '../../../infra/hooks/forms/useForm';
@@ -17,7 +18,6 @@ const loginSchena = yup.object().shape({
     .min(8, 'Sua senha precisa ter ao menos 8 caracteres'),
 });
 
-// eslint-disable-next-line react/prop-types
 export default function LoginForm({ onSubmit }) {
   const router = useRouter();
   const initialValues = {
@@ -86,3 +86,11 @@ export default function LoginForm({ onSubmit }) {
     </form>
   );
 }
+
+LoginForm.defaultProps = {
+  onSubmit: undefined,
+};
+
+LoginForm.propTypes = {
+  onSubmit: PropTypes.func,
+};
