@@ -1,12 +1,22 @@
 import React from 'react';
 
+function formatErrors(yupErrorsInner = []) {
+  return yupErrorsInner.reduce((errorObjectAcc, currentError) => {
+    const fieldName = currentError.path;
+    const erroMessage = currentError.message;
+    return {
+      ...errorObjectAcc,
+      [fieldName]: erroMessage,
+    };
+  }, {});
+}
+
 export function useForm({
   initialValues,
   onSubmit,
   validateSchema,
 }) {
   const [values, setValues] = React.useState(initialValues);
-
   const [isFormDisabled, setIsFormDisabled] = React.useState(true);
   const [erros, setErros] = React.useState({});
   const [touched, setTouchedFields] = React.useState({});
@@ -17,14 +27,7 @@ export function useForm({
       setErros({});
       setIsFormDisabled(false);
     } catch (erro) {
-      const formatedErros = erro.inner.reduce((errorObjectAcc, currentError) => {
-        const fieldName = currentError.path;
-        const erroMessage = currentError.message;
-        return {
-          ...errorObjectAcc,
-          [fieldName]: erroMessage,
-        };
-      }, {});
+      const formatedErros = formatErrors(erro.inner);
       setErros(formatedErros);
       setIsFormDisabled(true);
     }
