@@ -44,19 +44,19 @@ jobs:
         with:
           node-version: '14.16.0'
       - name: Get npm cache directory
-        id: npm-cache
+        id: npm-cache-dir
         run: |
           echo "::set-output name=dir::$(npm config get cache)"
       - uses: actions/cache@v2
         with:
-          path: ${{ steps.npm-cache.outputs.dir }}
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         
       # ####################
 
       # Commands that will run:
       - name: Install Packages
-        run: npm run --prefer-offline
+        run: npm --prefer-offline
 
       - name: Run Unit Tests
         run: npm test
