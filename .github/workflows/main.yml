@@ -34,7 +34,6 @@ jobs:
         run: npm install
       - name: Roda o Linter!
         run: npm run lint
-
   unit_tests:
     name: Unit Tests
     runs-on: ubuntu-latest # The type of runner that the job will run on
