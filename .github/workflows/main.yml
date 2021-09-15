@@ -56,7 +56,7 @@ jobs:
 
       # Commands that will run:
       - name: Install Packages
-        run: npm --prefer-offline
+        run: npm run --prefer-offline
 
       - name: Run Unit Tests
         run: npm test
