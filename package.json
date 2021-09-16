@@ -11,7 +11,7 @@
     "test:watch": "jest --watch",
     "prepare": "husky install",
     "test:integration:open": "cypress open",
-    "teste:integration": "cypress run --headless"
+    "test:integration": "cypress run --headless"
   },
   "dependencies": {
     "@crello/react-lottie": "0.0.11",
