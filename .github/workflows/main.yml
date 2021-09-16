@@ -34,7 +34,7 @@ jobs:
         run: npm install
       - name: Roda o Linter!
         run: npm run lint
-        
+
   unit_tests:
     name: Unit Tests
     runs-on: ubuntu-latest # The type of runner that the job will run on
@@ -48,13 +48,17 @@ jobs:
         id: npm-cache-dir
         run: |
           echo "::set-output name=dir::$(npm config get cache)"
+      - uses: - name: Get npm cache directory
+        id: npm-cache-dir
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
       - uses: actions/cache@v2
-         with:
-           path: ${{ steps.npm-cache-dir.outputs.dir }}
-           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-           restore-keys: |
-             ${{ runner.os }}-node-
-        
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+                
       # ####################
 
       # Commands that will run:
