@@ -31,6 +31,7 @@ const Container = styled.div`
     ${propToStyle('display')}
     ${propToStyle('flex')}
     ${propToStyle('alignItems')}
+    ${propToStyle('padding')}
     
   `;
 // eslint-disable-next-line import/prefer-default-export
@@ -151,6 +152,7 @@ export const Grid = {
     ${propToStyle('alignItems')}
     ${propToStyle('justifyContent')}
     ${propToStyle('flexDirection')}
-    ${propToStyle('paddingRight')}    
+    ${propToStyle('paddingRight')}
+    ${propToStyle('position')}    
     `,
 };
