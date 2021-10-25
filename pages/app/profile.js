@@ -1,18 +1,9 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { authService } from '../../src/services/auth/authService';
-import { userService } from '../../src/services/user/userService,';
-
-export default function ProfilePage(props) {
-  return (
-    <div>
-      Página de Profile!
-      <pre>
-        {JSON.stringify(props, null, 4)}
-      </pre>
-      <img src="https://media.giphy.com/media/bn0zlGb4LOyo8/giphy.gif" alt="Nicolas Cage" />
-    </div>
-  );
-}
+import { userService } from '../../src/services/user/userService';
+import ProfileScreen from '../../src/components/screens/ProfileScreen';
+import websitePageHOC from '../../src/components/wrappers/WebsitePage/hoc';
 
 export async function getServerSideProps(ctx) {
   const auth = authService(ctx);
@@ -22,6 +13,7 @@ export async function getServerSideProps(ctx) {
   if (hasActiveSession) {
     const session = await auth.getSession();
     const profilePage = await userService.getProfilePage(ctx);
+    const githubInfo = await userService.getGithubInfo(session.username);
     return {
       props: {
         user: {
@@ -30,10 +22,32 @@ export async function getServerSideProps(ctx) {
 
         },
         posts: profilePage.posts,
+        githubInfo,
       },
     };
   }
 
   ctx.res.writeHead(307, { location: '/login' });
-  return ctx.res.end();
+  ctx.res.end();
+
+  return {
+    props: {},
+  };
 }
+
+export default websitePageHOC(ProfileScreen, {
+  pageWrapperProps: {
+    seoProps: {
+      headTitle: 'Perfil',
+    },
+    menuProps: {
+      display: false,
+      logged: true,
+    },
+    // pageBoxProps: {
+    //   backgroundImage: 'url(/images/bubbles.svg)',
+    //   backgroundRepeat: 'no-repeat',
+    //   backgroundPosition: 'bottom right',
+    // },
+  },
+});
