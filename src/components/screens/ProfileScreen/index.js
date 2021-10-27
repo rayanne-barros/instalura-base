@@ -6,7 +6,7 @@ import { Grid } from '../../foundation/layout/Grid';
 import { Box } from '../../foundation/layout/Box';
 import Text from '../../foundation/Text';
 
-export default function ProfilePage(props) {
+export default function ProfileScreen(props) {
   const { posts } = props;
   const { githubInfo } = props;
   return (
@@ -23,7 +23,6 @@ export default function ProfilePage(props) {
             justifyContent="center"
             flexDirection="column"
           >
-            {/* {console.log(posts)} */}
             <ProfileWrapper.UserInfo>
               <section className="user__image">
                 <img className="profilePic" src={`${githubInfo.avatar}`} alt="Foto de perfil" />
@@ -152,7 +151,7 @@ export default function ProfilePage(props) {
   );
 }
 
-ProfilePage.propTypes = {
+ProfileScreen.propTypes = {
   githubInfo: PropTypes.object.isRequired,
   posts: PropTypes.arrayOf(PropTypes.shape({
     username: PropTypes.string,
