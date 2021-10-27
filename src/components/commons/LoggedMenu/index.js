@@ -32,16 +32,16 @@ export default function LoggedMenu(user) {
                 inputClassName="searchInput"
               />
               <Button type="button" ghost variant="secondary.main" className="addPicButton">
-                <img src="/images/add.png" alt="adicionar foto" />
+                <img src="/Images/add.png" alt="adicionar foto" />
               </Button>
               <Button type="button" ghost variant="secondary.main" href="/app/login" order="1">
-                <img src="/images/home.png" alt="home" />
+                <img src="/Images/home.png" alt="home" />
               </Button>
               <Button type="button" ghost variant="secondary.main" order="2" className="searchIcon">
-                <img src="/images/search.png" alt="home" />
+                <img src="/Images/search.png" alt="home" />
               </Button>
               <Button type="button" ghost variant="secondary.main" order="4">
-                <img src="/images/heart.png" alt="likes" />
+                <img src="/Images/heart.png" alt="likes" />
               </Button>
               <Button type="button" ghost variant="secondary.main" order="5" href="/app/profile">
                 <img className="userPic" src={`https://github.com/${username}.png`} alt="botão para página de perfil" />
