@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { authService } from '../../src/services/auth/authService';
-import { userService } from '../../src/services/user/userService';
 import ProfileScreen from '../../src/components/screens/ProfileScreen';
 import websitePageHOC from '../../src/components/wrappers/WebsitePage/hoc';
+import { authService } from '../../src/services/auth/authService';
+import { userService } from '../../src/services/user/userService';
 
 export async function getServerSideProps(ctx) {
   const auth = authService(ctx);
@@ -35,6 +35,12 @@ export async function getServerSideProps(ctx) {
   };
 }
 
+// function ProfilePage() {
+//   return (
+//     <ProfileScreen />
+//   );
+// }
+
 export default websitePageHOC(ProfileScreen, {
   pageWrapperProps: {
     seoProps: {
@@ -44,10 +50,5 @@ export default websitePageHOC(ProfileScreen, {
       display: false,
       logged: true,
     },
-    // pageBoxProps: {
-    //   backgroundImage: 'url(/images/bubbles.svg)',
-    //   backgroundRepeat: 'no-repeat',
-    //   backgroundPosition: 'bottom right',
-    // },
   },
 });

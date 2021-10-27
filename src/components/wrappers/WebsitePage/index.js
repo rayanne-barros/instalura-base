@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import get from 'lodash/get';
@@ -8,6 +9,8 @@ import { Box } from '../../foundation/layout/Box';
 import Modal from '../../commons/Modal';
 import FormCadastro from '../../patterns/FormCadastro';
 import { SEO } from '../../commons/SEO';
+import LoggedMenu from '../../commons/LoggedMenu';
+
 import { WebsitePageContext } from './context';
 
 export { WebsitePageContext } from './context';
@@ -18,6 +21,7 @@ export default function WebsitePageWrapper({
   pageBoxProps,
   menuProps,
   messages,
+  user,
 }) {
   const [isModalOpen, setModalState] = React.useState(false);
   return (
@@ -53,8 +57,15 @@ export default function WebsitePageWrapper({
             onCadastrarClick={() => setModalState(true)}
           />
         )}
+        {menuProps.logged && (
+          <LoggedMenu
+            user={user}
+          />
+        )}
         {children}
-        <Footer />
+        {menuProps.display && (
+          <Footer />
+        )}
       </Box>
     </WebsitePageContext.Provider>
   );
@@ -65,8 +76,10 @@ WebsitePageWrapper.defaultProps = {
   pageBoxProps: {},
   menuProps: {
     display: true,
+    logged: false,
   },
   messages: {},
+  user: {},
 };
 
 WebsitePageWrapper.propTypes = {
@@ -75,6 +88,7 @@ WebsitePageWrapper.propTypes = {
   }),
   menuProps: PropTypes.shape({
     display: PropTypes.bool,
+    logged: PropTypes.bool,
   }),
   pageBoxProps: PropTypes.shape({
     backgroundImage: PropTypes.string,
@@ -82,6 +96,6 @@ WebsitePageWrapper.propTypes = {
     backgroundPosition: PropTypes.string,
   }),
   children: PropTypes.node.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
   messages: PropTypes.object,
+  user: PropTypes.string,
 };

@@ -3,7 +3,7 @@ import Logo from '../../../theme/Logo';
 import { MenuWrapper } from './style/MenuWraper';
 import { Grid } from '../../foundation/layout/Grid';
 import TextField from '../../Forms/TextField';
-import Button from '../Button';
+import { Button } from '../Button';
 
 export default function LoggedMenu(user) {
   // eslint-disable-next-line react/destructuring-assignment
