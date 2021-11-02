@@ -10,6 +10,7 @@ import Modal from '../../commons/Modal';
 import FormCadastro from '../../patterns/FormCadastro';
 import { SEO } from '../../commons/SEO';
 import LoggedMenu from '../../commons/LoggedMenu';
+import PostEditor from '../../patterns/FormPost';
 
 import { WebsitePageContext } from './context';
 
@@ -24,11 +25,13 @@ export default function WebsitePageWrapper({
   user,
 }) {
   const [isModalOpen, setModalState] = React.useState(false);
+  const [isPicModalOpen, setPicModalState] = React.useState(false);
   return (
     <WebsitePageContext.Provider
       value={{
         toggleModalCadastro: () => {
           setModalState(!isModalOpen);
+          setPicModalState(!isPicModalOpen);
         },
         getCMSContent: (cmsKey) => get(messages, cmsKey),
       }}
@@ -52,6 +55,21 @@ export default function WebsitePageWrapper({
             <FormCadastro propsDoModal={propsDoModal} setModalState={setModalState} />
           )}
         </Modal>
+        <Modal
+          isOpen={isPicModalOpen}
+          onClose={() => {
+            setPicModalState(false);
+          }}
+        >
+          {(propsDoModal) => (
+            <PostEditor
+              propsDoModal={propsDoModal}
+              onClose={() => {
+                setPicModalState(false);
+              }}
+            />
+          )}
+        </Modal>
         {menuProps.display && (
           <Menu
             onCadastrarClick={() => setModalState(true)}
@@ -60,6 +78,7 @@ export default function WebsitePageWrapper({
         {menuProps.logged && (
           <LoggedMenu
             user={user}
+            onPostClick={() => setPicModalState(true)}
           />
         )}
         {children}
@@ -97,5 +116,5 @@ WebsitePageWrapper.propTypes = {
   }),
   children: PropTypes.node.isRequired,
   messages: PropTypes.object,
-  user: PropTypes.string,
+  user: PropTypes.object,
 };

@@ -3,9 +3,11 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import Text from '../../foundation/Text';
+import { propToStyle } from '../../../theme/utils/propToStyle';
 
 const InputWrapper = styled.div`
   margin-bottom: 17px;
+  ${propToStyle('margin')}
 `;
 
 const Input = styled(Text)`
@@ -14,6 +16,8 @@ const Input = styled(Text)`
   padding: 12px 16px;
   outline: 0;
   border-radius: ${({ theme }) => theme.borderRadius}; 
+
+  ${propToStyle('background')}
 
   ${({ theme, isFieldInvalid }) => isFieldInvalid && css`
     border-color: ${theme.colors.error.main.color};
@@ -32,24 +36,32 @@ Input.defaultProps = {
 export default function TextField({
   placeholder,
   name,
+  type,
   onChange,
   value,
   error,
   isTouched,
+  margin,
+  divClassName,
+  inputClassName,
   ...props
 }) {
   const hasError = Boolean(error);
   const isFieldInvalid = hasError && isTouched;
 
   return (
-    <InputWrapper>
+    <InputWrapper
+      margin={margin}
+      className={divClassName}
+    >
       <Input
-        type="text"
+        type={type}
         placeholder={placeholder}
         name={name}
         onChange={onChange}
         value={value}
         isFieldInvalid={isFieldInvalid}
+        className={inputClassName}
         {...props}
       />
 
@@ -70,6 +82,10 @@ export default function TextField({
 TextField.defaultProps = {
   error: '',
   isTouched: false,
+  type: 'text',
+  margin: 'auto auto 17px auto',
+  divClassName: '',
+  inputClassName: '',
 };
 
 TextField.propTypes = {
@@ -79,4 +95,8 @@ TextField.propTypes = {
   isTouched: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  margin: PropTypes.string,
+  divClassName: PropTypes.string,
+  inputClassName: PropTypes.string,
 };

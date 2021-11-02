@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import FeedScreen from '../../src/components/screens/FeedScreen';
+import FeedScreen from '../../src/components/screens/app/FeedScreen';
 import websitePageHOC from '../../src/components/wrappers/WebsitePage/hoc';
 import { authService } from '../../src/services/auth/authService';
 import { userService } from '../../src/services/user/userService';
@@ -38,11 +38,14 @@ export async function getServerSideProps(ctx) {
 export default websitePageHOC(FeedScreen, {
   pageWrapperProps: {
     seoProps: {
-      headTitle: 'Perfil',
+      headTitle: 'Feed',
     },
     menuProps: {
       display: false,
       logged: true,
+    },
+    pageBoxProps: {
+      backgroundColor: '#F2F2F2',
     },
   },
 });

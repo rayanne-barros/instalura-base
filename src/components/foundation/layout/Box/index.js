@@ -5,7 +5,8 @@ import { propToStyle } from '../../../../theme/utils/propToStyle';
 export const Box = styled.div`
     ${propToStyle('display')}
     ${propToStyle('flexDirection')}
-    ${propToStyle('justifyContent')}    
+    ${propToStyle('justifyContent')} 
+    ${propToStyle('alignSelf')}   
     ${propToStyle('flex')}
     ${propToStyle('flexWrap')}
     ${propToStyle('backgroundColor')}
@@ -22,5 +23,9 @@ export const Box = styled.div`
     ${propToStyle('marginTop')}
     ${propToStyle('marginBottom')}
     ${propToStyle('marginRight')}
+    ${propToStyle('position')}
+    ${propToStyle('right')}
+    ${propToStyle('top')}
+    ${propToStyle('order')}
     ${({ theme, borderRadiusTheme }) => borderRadiusTheme && `border-radius: ${theme.borderRadius}`};
 `;

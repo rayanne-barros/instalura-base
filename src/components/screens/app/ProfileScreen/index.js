@@ -2,9 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ProfileWrapper } from './style/ProfileWrapper';
-import { Grid } from '../../foundation/layout/Grid';
-import { Box } from '../../foundation/layout/Box';
-import Text from '../../foundation/Text';
+import { Grid } from '../../../foundation/layout/Grid';
+import { Box } from '../../../foundation/layout/Box';
+import Text from '../../../foundation/Text';
 
 export default function ProfileScreen(props) {
   const { posts } = props;
@@ -108,14 +108,14 @@ export default function ProfileScreen(props) {
             </ProfileWrapper.UserInfo>
             <ProfileWrapper.UserPics>
               <ul className="userPosts">
-                {posts.slice(0, 30).map((post) => (
+                {posts.reverse().slice(0, 30).map((post) => (
                   <li key={post.id} className="userPosts__post">
                     <img className="userPosts__post__image" src={post.photoUrl} alt="" />
                     <div className="userPosts__post__feedback">
                       <Box
                         display="flex"
                       >
-                        <img className="userPosts__post__feedback__icon" src="/images/likes.png" alt="" />
+                        <img className="userPosts__post__feedback__icon" src="/Images/likes.png" alt="" />
                         <Text
                           variant="paragraph1"
                           tag="p"
@@ -129,7 +129,7 @@ export default function ProfileScreen(props) {
                         display="flex"
                         margin="0 0 0 1.5rem"
                       >
-                        <img className="userPosts__post__feedback__icon" src="/images/comments.png" alt="" />
+                        <img className="userPosts__post__feedback__icon" src="/Images/comments.png" alt="" />
                         <Text
                           variant="paragraph1"
                           tag="p"

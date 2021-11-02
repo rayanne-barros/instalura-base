@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import ProfileScreen from '../../src/components/screens/ProfileScreen';
+import ProfileScreen from '../../src/components/screens/app/ProfileScreen';
 import websitePageHOC from '../../src/components/wrappers/WebsitePage/hoc';
 import { authService } from '../../src/services/auth/authService';
 import { userService } from '../../src/services/user/userService';
@@ -35,12 +35,6 @@ export async function getServerSideProps(ctx) {
   };
 }
 
-// function ProfilePage() {
-//   return (
-//     <ProfileScreen />
-//   );
-// }
-
 export default websitePageHOC(ProfileScreen, {
   pageWrapperProps: {
     seoProps: {
@@ -49,6 +43,9 @@ export default websitePageHOC(ProfileScreen, {
     menuProps: {
       display: false,
       logged: true,
+    },
+    pageBoxProps: {
+      backgroundColor: '#F2F2F2',
     },
   },
 });
