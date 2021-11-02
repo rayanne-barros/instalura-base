@@ -1,14 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 import Logo from '../../../theme/Logo';
 import { MenuWrapper } from './style/MenuWraper';
 import { Grid } from '../../foundation/layout/Grid';
 import TextField from '../../Forms/TextField';
 import { Button } from '../Button';
 import { Box } from '../../foundation/layout/Box';
+import { loginService } from '../../../services/login/loginService';
 
-export default function LoggedMenu(user) {
+export default function LoggedMenu({ user, onPostClick }) {
   // eslint-disable-next-line react/destructuring-assignment
-  const { username } = user.user;
+  const { username } = user;
+  const redirect = useRouter();
+
+  const handleLogout = async () => {
+    await loginService.logout(null);
+    redirect.push('/');
+  };
   return (
     <MenuWrapper>
       <Grid.Container>
@@ -30,10 +39,11 @@ export default function LoggedMenu(user) {
                 type="search"
                 margin="0"
                 value=""
+                onChange={() => {}}
                 divClassName="searchDiv"
                 inputClassName="searchInput"
               />
-              <Button type="button" ghost variant="secondary.main" className="addPicButton">
+              <Button type="button" ghost variant="secondary.main" className="addPicButton" onClick={() => onPostClick()}>
                 <img src="/Images/add.png" alt="adicionar foto" />
               </Button>
               <Button type="button" ghost variant="secondary.main" href="/app/feed" order="1">
@@ -62,7 +72,7 @@ export default function LoggedMenu(user) {
                   >
                     Meu Perfil
                   </Button>
-                  <Button type="button" ghost variant="tertiary.main" fullWidth style={{ width: '100%', justifyContent: 'flex-start', padding: '12px 20px' }}>
+                  <Button type="button" ghost variant="tertiary.main" onClick={handleLogout} fullWidth style={{ width: '100%', justifyContent: 'flex-start', padding: '12px 20px' }}>
                     Logout
                   </Button>
                 </Box>
@@ -74,3 +84,9 @@ export default function LoggedMenu(user) {
     </MenuWrapper>
   );
 }
+
+LoggedMenu.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  user: PropTypes.object.isRequired,
+  onPostClick: PropTypes.func.isRequired,
+};

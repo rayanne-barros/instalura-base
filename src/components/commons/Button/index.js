@@ -20,14 +20,20 @@ const ButtonDefault = css`
 
 // eslint-disable-next-line import/prefer-default-export
 const ButtonWrapper = styled.button`
+    display:flex;
+    align-items: center;
+    justify-content: center;
     border: 0;
     cursor: pointer;
     padding: 12px 26px;
     font-weight: bold;
     opacity: 1;
-    border-radius: 8px;     
+    border-radius: 8px;   
+
     ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)};
-    ${TextStyleVariantsMap.smallestException};    
+
+    ${TextStyleVariantsMap.smallestException};  
+
     transition: opacity ${({ theme }) => theme.transition};
     border-radius: ${({ theme }) => theme.borderRadius};
     &:hover,
@@ -64,15 +70,22 @@ const ButtonWrapper = styled.button`
     ${propToStyle('right')}
     ${propToStyle('order')}
     ${propToStyle('padding')}
+    ${propToStyle('flexGrow')}
+    ${propToStyle('flexDirection')}
+    ${propToStyle('width')}
+    ${propToStyle('height')}
 `;
 
-export function Button({ href, children, ...props }) {
+export function Button({
+  href, children, onClick, ...props
+}) {
   const hasHref = Boolean(href);
   const tag = hasHref ? Link : 'button';
   return (
     <ButtonWrapper
       as={tag}
       href={href}
+      onClick={onClick}
       {...props}
     >
       {children}
@@ -82,9 +95,11 @@ export function Button({ href, children, ...props }) {
 
 Button.defaultProps = {
   href: undefined,
+  onClick: () => {},
 };
 
 Button.propTypes = {
   href: PropTypes.string,
   children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
 };
