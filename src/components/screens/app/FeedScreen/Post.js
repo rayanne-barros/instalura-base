@@ -2,13 +2,13 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { userService } from '../../../services/user/userService';
-import PostWrapper from './style/PostWraper';
-import { Box } from '../../foundation/layout/Box';
-import Text from '../../foundation/Text';
-import Button from '../../commons/Button';
-import LikeButton from '../../commons/ButtonLike';
-import Link from '../../commons/Link';
+import { userService } from '../../../../services/user/userService';
+import { PostPhotoWrapper } from './style/PostWraper';
+import { Box } from '../../../foundation/layout/Box';
+import Text from '../../../foundation/Text';
+import { Button } from '../../../commons/Button';
+import LikeButton from '../../../commons/ButtonLike';
+import Link from '../../../commons/Link';
 
 export default function Post({
   item, user, githubInfo, postProps,
@@ -34,15 +34,15 @@ export default function Post({
   return (
     <>
       {postProps === 'feed' && (
-        <PostWrapper key={item.createdAt} feedPost>
-          <section className="posts__post-header">
+        <PostPhotoWrapper key={item.createdAt} feedPost>
+          <section className="posts__post">
             <Link
               href="/app/profile"
               display="flex"
               justifyContent="center"
               alignItems="center"
             >
-              <img className="posts__post-header__pic" src={githubInfo.avatar} alt={`perfil de${githubInfo.name}`} />
+              <img className="posts__post-header" src={githubInfo.avatar} alt={`perfil de${githubInfo.name}`} />
               <Text
                 variant="subTitle"
                 tag="h2"
@@ -53,7 +53,7 @@ export default function Post({
               </Text>
             </Link>
             <Button ghost className="button">
-              <img src="/images/menu.png" alt="icone de menu" />
+              <img src="/Images/menu.png" alt="icone de menu" />
             </Button>
           </section>
           <section className="posts__post-body">
@@ -66,7 +66,7 @@ export default function Post({
               width="100%"
               justifyContent="space-between"
             >
-              <section className="posts__post-footer__feedback-section">
+              <section className="posts__post-footer__feedback">
                 <Box
                   alignItems="center"
                   display="flex"
@@ -97,7 +97,7 @@ export default function Post({
                   margin="0 15px 0 0"
                 >
                   <Button ghost className="button">
-                    <img src="/images/comments-1.png" alt="" />
+                    <img src="/Images/comments-1.png" alt="" />
                   </Button>
                   <Text
                     variant="subTitle"
@@ -109,20 +109,20 @@ export default function Post({
                   </Text>
                 </Box>
                 <Button ghost className="button">
-                  <img src="/images/send.png" alt="" />
+                  <img src="/Images/send.png" alt="" />
                 </Button>
               </section>
               <Button ghost className="button">
-                <img src="/images/save.png" alt="" />
+                <img src="/Images/save.png" alt="" />
               </Button>
             </Box>
           </section>
-        </PostWrapper>
+        </PostPhotoWrapper>
       )}
       {postProps === 'profile' && (
-        <PostWrapper key={item.createdAt} profile>
-          <img className="userPosts__post__image" src={item.photoUrl} alt={item.description} loading="lazy" />
-          <div className="userPosts__post__feedback">
+        <PostPhotoWrapper key={item.createdAt} profile>
+          <img className="userPosts__post" src={item.photoUrl} alt={item.description} loading="lazy" />
+          <div className="userPosts__feedback">
             <LikeButton
               ghost
               className="button"
@@ -132,7 +132,7 @@ export default function Post({
               height="50%"
             />
           </div>
-        </PostWrapper>
+        </PostPhotoWrapper>
       )}
     </>
   );
