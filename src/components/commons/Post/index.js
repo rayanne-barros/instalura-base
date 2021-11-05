@@ -2,13 +2,13 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { userService } from '../../../../services/user/userService';
+import { Box } from '../../foundation/layout/Box';
+import { Button } from '../Button';
+import LikeButton from '../ButtonLike';
+import Link from '../Link';
 import { PostPhotoWrapper } from './style/PostWraper';
-import { Box } from '../../../foundation/layout/Box';
-import Text from '../../../foundation/Text';
-import { Button } from '../../../commons/Button';
-import LikeButton from '../../../commons/ButtonLike';
-import Link from '../../../commons/Link';
+import Text from '../../foundation/Text';
+import { userService } from '../../../services/user/userService';
 
 export default function Post({
   item, user, githubInfo, postProps,
@@ -97,7 +97,7 @@ export default function Post({
                   margin="0 15px 0 0"
                 >
                   <Button ghost className="button">
-                    <img src="/Images/comments-1.png" alt="" />
+                    <img src="/Images/comments-1.png" alt="Imagem do ícone comentários do instagram" />
                   </Button>
                   <Text
                     variant="subTitle"
@@ -109,11 +109,11 @@ export default function Post({
                   </Text>
                 </Box>
                 <Button ghost className="button">
-                  <img src="/Images/send.png" alt="" />
+                  <img src="/Images/send.png" alt="Imagem do ícone de compartilhar a postagem do instagram" />
                 </Button>
               </section>
               <Button ghost className="button">
-                <img src="/Images/save.png" alt="" />
+                <img src="/Images/save.png" alt="Imagem do ícone de salvar a postagem do instagram" />
               </Button>
             </Box>
           </section>

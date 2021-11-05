@@ -4,44 +4,44 @@ import PropTypes from 'prop-types';
 import Text from '../../../foundation/Text';
 import { Grid } from '../../../foundation/layout/Grid';
 import { FeedWrapper } from './style/FeedWrapper';
-import Post from './Post';
+import Post from '../../../commons/Post';
 import CardFeed from '../../../commons/CardFeed';
 
 const friends = [
   {
     name: 'Ana Paula Dezuo',
     avatar: 'https://avatars.githubusercontent.com/u/43011663?v=4',
-    login: 'anadezuo',
+    username: 'anadezuo',
     url: 'https://github.com/anadezuo',
   },
   {
     name: 'Carol Andrade',
     avatar: 'https://avatars.githubusercontent.com/u/65976843?v=4',
-    login: 'carolandrade1',
+    username: 'carolandrade1',
     url: 'https://github.com/carolandrade1',
   },
   {
     name: 'Danilo Yorinori',
     avatar: 'https://avatars.githubusercontent.com/u/624381?v=4',
-    login: 'danilok',
+    username: 'danilok',
     url: 'https://github.com/danilok',
   },
   {
     name: 'Eduardo Tioma',
     avatar: 'https://avatars.githubusercontent.com/u/32800546?v=4',
-    login: 'edukure',
+    username: 'edukure',
     url: 'https://github.com/edukure',
   },
   {
     name: 'Gabriel Bridi Schultz',
     avatar: 'https://avatars.githubusercontent.com/u/81654505?v=4',
-    login: 'SchultzGabriel',
+    username: 'SchultzGabriel',
     url: 'https://github.com/SchultzGabriel',
   },
   {
     name: 'Victor Dantas',
     avatar: 'https://avatars.githubusercontent.com/u/64330605?v=4',
-    login: 'victordantasdev',
+    username: 'victordantasdev',
     url: 'https://github.com/victordantasdev',
   },
 ];
