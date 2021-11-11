@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../../../theme/utils/breakpointsMedia';
 
-export const FeedWrapper = styled.section`
+export const FeedWrapper = styled.main`
 
  .button{
   align-items: center;

@@ -9,10 +9,10 @@ import CardFeed from '../../../commons/CardFeed';
 
 const friends = [
   {
-    name: 'Ana Paula Dezuo',
-    avatar: 'https://avatars.githubusercontent.com/u/43011663?v=4',
-    username: 'anadezuo',
-    url: 'https://github.com/anadezuo',
+    name: 'Rayanne Barros',
+    username: 'rayanne-barros',
+    avatar: 'https://avatars.githubusercontent.com/u/81394995?v=4',
+    url: 'https://github.com/rayanne-barros',
   },
   {
     name: 'Carol Andrade',
@@ -37,12 +37,6 @@ const friends = [
     avatar: 'https://avatars.githubusercontent.com/u/81654505?v=4',
     username: 'SchultzGabriel',
     url: 'https://github.com/SchultzGabriel',
-  },
-  {
-    name: 'Victor Dantas',
-    avatar: 'https://avatars.githubusercontent.com/u/64330605?v=4',
-    username: 'victordantasdev',
-    url: 'https://github.com/victordantasdev',
   },
 ];
 
@@ -74,7 +68,6 @@ export default function FeedScreen(props) {
             value={{ md: 5, lg: 4 }}
             offset={{ md: 0, lg: 0 }}
             display="flex"
-            // position="relative"
           >
             <section className="profiles">
               <CardFeed item={githubInfo} main="true" />

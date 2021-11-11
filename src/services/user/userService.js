@@ -17,9 +17,6 @@ export const userService = {
         },
       });
       return {
-        user: {
-          totalLikes: 100,
-        },
         posts: response.data,
       };
     } catch (err) {
@@ -57,13 +54,9 @@ export const userService = {
         },
         body: data,
       });
-
-      if (response.data) {
-        return response.data;
-      }
-      return undefined;
+      return response.data;
     } catch (err) {
-      return undefined;
+      throw new Error('Não foi possivel enviar o novo post', err);
     }
   },
   async likeIt(id) {
