@@ -6,7 +6,7 @@ import { isStagingEnv } from '../../infra/env/isStagingEnv';
 
 const BASE_URL = isStagingEnv
   ? 'https://instalura-api-git-master-omariosouto.vercel.app'
-  : 'https://instalura-api-git-master-omariosouto.vercel.app';
+  : 'https://instalura-api.vercel.app';
 
 export const authService = (ctx) => {
   const cookies = parseCookies(ctx);

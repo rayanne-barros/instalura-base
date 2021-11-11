@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
 import ProfileScreen from '../../src/components/screens/app/ProfileScreen';
 import websitePageHOC from '../../src/components/wrappers/WebsitePage/hoc';
 import { authService } from '../../src/services/auth/authService';
@@ -38,7 +36,7 @@ export async function getServerSideProps(ctx) {
 export default websitePageHOC(ProfileScreen, {
   pageWrapperProps: {
     seoProps: {
-      headTitle: 'Perfil',
+      headTitle: 'Profile',
     },
     menuProps: {
       display: false,

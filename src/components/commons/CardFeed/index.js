@@ -53,5 +53,5 @@ CardFeed.defaultProps = {
 CardFeed.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   item: PropTypes.object.isRequired,
-  main: PropTypes.bool,
+  main: PropTypes.string,
 };

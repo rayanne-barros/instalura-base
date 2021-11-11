@@ -4,45 +4,39 @@ import PropTypes from 'prop-types';
 import Text from '../../../foundation/Text';
 import { Grid } from '../../../foundation/layout/Grid';
 import { FeedWrapper } from './style/FeedWrapper';
-import Post from './Post';
+import Post from '../../../commons/Post';
 import CardFeed from '../../../commons/CardFeed';
 
 const friends = [
   {
-    name: 'Ana Paula Dezuo',
-    avatar: 'https://avatars.githubusercontent.com/u/43011663?v=4',
-    login: 'anadezuo',
-    url: 'https://github.com/anadezuo',
+    name: 'Rayanne Barros',
+    username: 'rayanne-barros',
+    avatar: 'https://avatars.githubusercontent.com/u/81394995?v=4',
+    url: 'https://github.com/rayanne-barros',
   },
   {
     name: 'Carol Andrade',
     avatar: 'https://avatars.githubusercontent.com/u/65976843?v=4',
-    login: 'carolandrade1',
+    username: 'carolandrade1',
     url: 'https://github.com/carolandrade1',
   },
   {
     name: 'Danilo Yorinori',
     avatar: 'https://avatars.githubusercontent.com/u/624381?v=4',
-    login: 'danilok',
+    username: 'danilok',
     url: 'https://github.com/danilok',
   },
   {
     name: 'Eduardo Tioma',
     avatar: 'https://avatars.githubusercontent.com/u/32800546?v=4',
-    login: 'edukure',
+    username: 'edukure',
     url: 'https://github.com/edukure',
   },
   {
     name: 'Gabriel Bridi Schultz',
     avatar: 'https://avatars.githubusercontent.com/u/81654505?v=4',
-    login: 'SchultzGabriel',
+    username: 'SchultzGabriel',
     url: 'https://github.com/SchultzGabriel',
-  },
-  {
-    name: 'Victor Dantas',
-    avatar: 'https://avatars.githubusercontent.com/u/64330605?v=4',
-    login: 'victordantasdev',
-    url: 'https://github.com/victordantasdev',
   },
 ];
 
@@ -74,7 +68,6 @@ export default function FeedScreen(props) {
             value={{ md: 5, lg: 4 }}
             offset={{ md: 0, lg: 0 }}
             display="flex"
-            // position="relative"
           >
             <section className="profiles">
               <CardFeed item={githubInfo} main="true" />

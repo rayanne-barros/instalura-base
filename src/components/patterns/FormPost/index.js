@@ -102,7 +102,7 @@ function FormPost({ onClose }) {
           <img
             className={`filter-${form.values.filter} selectedPic`}
             src={preview || '/Images/noPreview.svg'}
-            alt=""
+            alt="Imagem de fundo"
           />
         </FilterPreview>
       </PostEditorWrapper.ImageField>
@@ -120,7 +120,6 @@ function FormPost({ onClose }) {
               <Box
                 display="flex"
                 width="100%"
-                // justifyContent="space-between"
                 alignItems="center"
                 justifyContent="center"
                 position="relative"
@@ -144,7 +143,7 @@ function FormPost({ onClose }) {
                   type="button"
                   id="setPreviewButton"
                 >
-                  =&gt;
+                  ➡
                 </Button>
               </Box>
               <Button
