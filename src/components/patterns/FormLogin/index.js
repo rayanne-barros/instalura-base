@@ -34,7 +34,7 @@ export default function LoginForm({ onSubmit }) {
         password: values.senha, // 'senhasegura
       })
         .then(() => {
-          router.push('/app/profile');
+          router.push('/app/feed');
         }).catch((error) => {
           // Desafio: Mostrar o erro na tela
           // eslint-disable-next-line no-console
