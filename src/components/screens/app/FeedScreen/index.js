@@ -27,12 +27,6 @@ const friends = [
     url: 'https://github.com/danilok',
   },
   {
-    name: 'Eduardo Tioma',
-    avatar: 'https://avatars.githubusercontent.com/u/32800546?v=4',
-    username: 'edukure',
-    url: 'https://github.com/edukure',
-  },
-  {
     name: 'Gabriel Bridi Schultz',
     avatar: 'https://avatars.githubusercontent.com/u/81654505?v=4',
     username: 'SchultzGabriel',
